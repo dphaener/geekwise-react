@@ -16,12 +16,13 @@ template: index.ejs
 - Email: dphaener at gmail dot com
 - Slack: https://geekwise-academy-frs.slack.com
 
-### About Jason
+### About Matt
 
-- Web developer for 8 years
-- Started with Django, now using React full time for the last year
-- I work with Daren at [Edit LLC](http://editllc.com/)
-- Email: zbyte64 at gmail dot com
+- Web developer for almost 10 years
+- Began with a focus on front end with HTML5, CSS3, and Javascript.
+- Moved into Wordpress developement
+- I work here at [Bitwise Industries](http://bitwiseindustries.com/) as a Developer Fellow leading a freelance cohort
+- Email: mhigley at bitwiseindustries dot com
 
 ### Student Intros
 
