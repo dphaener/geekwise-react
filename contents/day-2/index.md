@@ -3,7 +3,13 @@ title: Geekwise Academy ReactJS
 template: index.ejs
 ---
 
-# Day 2: React conventions and lifecycles
+# Day 2: React vs. Angular
+
+## Similarities
+
+## Differences
+
+# React Basics
 
 ## The Virtual DOM
 
@@ -35,8 +41,8 @@ are not passed in.
 ```js
 class MyComponent extends React.Component {
   static propTypes = {
-    name: React.PropTypes.string,
-    email: React.PropTypes.string.isRequired
+    name: PropTypes.string,
+    email: PropTypes.string.isRequired
   }
 }
 ```
@@ -60,29 +66,6 @@ class MyComponent extends React.Component {
 This way, if somebody creates this component without passing the `classes` prop
 we know it will have some value, but if the prop is supplied, it will use the
 supplied value instead.
-
-### Refactoring Exercise
-
-Let's refactor our current app so that we have separate `NameInput` and `ColorInput`
-components....
-
-## Setting up our Project
-
-We're now ready to begin setting up our project. We'll be building a very stripped
-down Facebook clone. I've created some boilerplate code for us to get started
-with, so go ahead and clone it here: https://github.com/dphaener/geekbook
-
-I'll be keeping each day's progress in a separate branch. So at the end of
-today all of our code will be pushed to `day-2`.
-
-### Testing
-
-We'll be doing some basic unit and functional testing of our components and
-redux stores. Facebook has their own framework called `Jest` for testing, but
-I don't like it too much for various reasons, so we'll be using Zach's library
-for this purpose: https://github.com/Legitcode/tests
-
-It makes testing components pretty darn easy.
 
 ### React Router
 
