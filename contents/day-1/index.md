@@ -10,13 +10,13 @@ template: index.ejs
 ### About me
 
 - I've been a web developer for about 4 years
-- I work with Ruby, Rails, Angular, React and moreFlexJ
+- I work with Ruby, Rails, Angular, React, React Native and more
 - I currently work for [FlexJobs](https://www.flexjobs.com) as a Senior Ruby on Rails Developer
 - I co-founded [FermentAble, LLC](https://www.getfermentable.com)
   * Professional Brewery Management Software
   * Built with Ruby on Rails, GraphQL, and React
 - Email: dphaener at gmail dot com
-- Slack: https://geekwise-academy-frs.slack.com
+- Slack: https://geekwise.slack.com/messages/G7RGZ117H/
 
 ### About Matt
 
@@ -76,9 +76,9 @@ To make is easier to use GraphQL in our application, we will be using the
 JavaScript. It is a lot like lo-dash or underscore on steriods. We will be using
 this library here and there to make our lives easier.
 
-### Mocha JS
+### Jest
 
-[Mocha JS](https://mochajs.org/) is a test running framework that allows us to
+[Jest](https://facebook.github.io/jest/) is a test running framework that allows us to
 easily run our tests and get output from the command line.
 
 ### Enzyme JS
@@ -86,11 +86,6 @@ easily run our tests and get output from the command line.
 [Enzyme JS](http://airbnb.io/enzyme/) is a testing framework built to make
 testing React components easier. It was built and is maintained by the team at
 [Airbnb](http://airbnb.io).
-
-### Chai JS
-
-[Chai JS](http://chaijs.com/) is an assertion library that will give us some
-nice, human readable language to create our test assertions.
 
 ## Tools
 
