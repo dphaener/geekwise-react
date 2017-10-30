@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://dphaener.github.io/geekwise-react/styles/app.css" rel="stylesheet" />
+    <title>Geekwise Academy | ReactJS</title>
+  </head>
+  <body>
+    <div id="wrapper">
+			<main>
+				<div id="content">
+					<div class="innertube">
+            <h1 id="day-2-react-vs-angular">Day 2: React vs. Angular</h1>
+<h2 id="similarities">Similarities</h2>
+<h2 id="differences">Differences</h2>
+<h1 id="react-basics">React Basics</h1>
+<h2 id="the-virtual-dom">The Virtual DOM</h2>
+<p>The <a href="https://facebook.github.io/react/docs/glossary.html">Virtual DOM</a> is
+something that you&#39;ll hear a lot about in the React community and sounds a bit
+weird at first. But it&#39;s nothing to be afraid of. It&#39;s something that has been
+around for awhile, and is by no means unique to React. React, however uses it
+heavily and it&#39;s the reason for it being so fast.</p>
+<p>Simply speaking, it&#39;s a representation of the actual DOM in memory. When
+React renders your components on the page, it creates a Virtual copy of it in
+memory. When updates are triggered via <code>setState</code> or other methods, React creates
+a copy of the new DOM in memory, and performs a diff. It then only updates what
+has changed. This is far more fast and efficient than traversing the actual DOM
+and updating it in place.</p>
+<h2 id="reusable-components">Reusable Components</h2>
+<p>It is more often than not desirable to be able to create React components that
+are reusable. React is great for this and you can find the full documentation
+of everything we&#39;re going to cover right now here: <a href="https://facebook.github.io/react/docs/reusable-components.html">https://facebook.github.io/react/docs/reusable-components.html</a>.</p>
+<h3 id="prop-types">Prop Types</h3>
+<p>When creating reusable components, it&#39;s a good idea to use [propTyes to validate
+the input coming into the component, and to raise errors when required props
+are not passed in.</p>
+<pre><code class="lang-js"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>{
+  <span class="keyword">static</span> propTypes = {
+    <span class="attr">name</span>: PropTypes.string,
+    <span class="attr">email</span>: PropTypes.string.isRequired
+  }
+}
+</code></pre>
+<p>In the above example, if the component is not given a <code>name</code> prop, React will
+print out a warning in the console. However, if the <code>email</code> prop is not supplied,
+an error will be raised.</p>
+<h3 id="default-props">Default props</h3>
+<p>If you&#39;d like to have default values for props, you can do that too:</p>
+<pre><code class="lang-js"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>{
+  <span class="keyword">static</span> defaultProps = {
+    <span class="attr">classes</span>: <span class="string">'inline'</span>
+  }
+}
+</code></pre>
+<p>This way, if somebody creates this component without passing the <code>classes</code> prop
+we know it will have some value, but if the prop is supplied, it will use the
+supplied value instead.</p>
+<h3 id="react-router">React Router</h3>
+<p>We&#39;ll be using <a href="https://github.com/rackt/react-router">React Router</a> for all of
+our routing needs.</p>
+<p>Exercise:</p>
+<p><code>Install React Router and get the basic routing up and running with an index page</code></p>
+<h3 id="flux-architecture">Flux Architecture</h3>
+<p>We&#39;ll be using the <a href="https://facebook.github.io/flux/docs/overview.html">Flux</a>
+application architecture for handling application state.</p>
+<p>Our implementaion of choice for Flux will be <a href="https://github.com/rackt/redux">Redux</a></p>
+<p>Let&#39;s install Redux, and Redux React</p>
+
+					</div>
+				</div>
+			</main>
+			<nav id="nav">
+				<div class="innertube">
+					<h3>Classes</h3>
+					<ul>
+						<li><a href="http://dphaener.github.io/geekwise-react/day-1">Day 1</a></li>
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-2">Day 2</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-3">Day 3</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-4">Day 4</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-5">Day 5</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-6">Day 6</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-7">Day 7</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-8">Day 8</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-9">Day 9</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-10">Day 10</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-11">Day 11</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-12">Day 12</a></li> -->
+					</ul>
+					<h3>Resources</h3>
+					<ul>
+            <li><a target="_blank" href="https://geekwise.slack.com/messages/G7RGZ117H/">Slack Channel</a></li>
+						<li><a target="_blank" href="https://facebook.github.io/react/">React</a></li>
+            <li><a target="_blank" href="https://reacttraining.com/react-router/">React Router</a></li>
+						<li><a target="_blank" href="https://babeljs.io/docs/learn-es2015/">ES6 Features</a></li>
+						<li><a target="_blank" href="https://babeljs.io">Babel</a></li>
+						<li><a target="_blank" href="https://nodejs.org/en/">NodeJS</a></li>
+						<li><a target="_blank" href="https://github.com/creationix/nvm">NVM</a></li>
+            <li><a target="_blank" href="https://webpack.github.io/">Webpack</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/flux/docs/overview.html">Flux</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/graphql/">GraphQL</a></li>
+            <li><a target="_blank" href="https://github.com/jaredpalmer/formik">Formik</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/jest/">Jest</a></li>
+            <li><a target="_blank" href="http://airbnb.io/enzyme/">Enzyme</a></li>
+            <li><a target="_blank" href="http://dev.apollodata.com/react/">Apollo Client - React</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+  </body>
+</html>

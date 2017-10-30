@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://dphaener.github.io/geekwise-react/styles/app.css" rel="stylesheet" />
+    <title>Geekwise Academy | ReactJS</title>
+  </head>
+  <body>
+    <div id="wrapper">
+			<main>
+				<div id="content">
+					<div class="innertube">
+            <h1 id="day-1-the-basics">Day 1: The Basics</h1>
+<h2 id="who-is-everyone-">Who is everyone?</h2>
+<h3 id="about-me">About me</h3>
+<ul>
+<li>I&#39;ve been a web developer for about 4 years</li>
+<li>I work with Ruby, Rails, Angular, React, React Native and more</li>
+<li>I currently work for <a href="https://www.flexjobs.com">FlexJobs</a> as a Senior Ruby on Rails Developer</li>
+<li>I co-founded <a href="https://www.getfermentable.com">FermentAble, LLC</a><ul>
+<li>Professional Brewery Management Software</li>
+<li>Built with Ruby on Rails, GraphQL, and React</li>
+</ul>
+</li>
+<li>Email: dphaener at gmail dot com</li>
+<li>Slack: <a href="https://geekwise.slack.com/messages/G7RGZ117H/">https://geekwise.slack.com/messages/G7RGZ117H/</a></li>
+</ul>
+<h3 id="about-matt">About Matt</h3>
+<ul>
+<li>Web developer for almost 10 years</li>
+<li>Began with a focus on front end with HTML5, CSS3, and Javascript.</li>
+<li>Moved into Wordpress developement</li>
+<li>I work here at <a href="http://bitwiseindustries.com/">Bitwise Industries</a> as a Developer Fellow leading a freelance cohort</li>
+<li>Email: mhigley at bitwiseindustries dot com</li>
+</ul>
+<h3 id="student-intros">Student Intros</h3>
+<ul>
+<li>What&#39;s your name?</li>
+<li>What&#39;s your career background?</li>
+<li>What technologies do you have experience with?</li>
+<li>What do you hope to get out of this class?</li>
+</ul>
+<h2 id="software-frameworks">Software/Frameworks</h2>
+<h3 id="react-js">React JS</h3>
+<p>We will of course be using <a href="https://reactjs.org/">React JS</a> in this class.</p>
+<h3 id="es2015">ES2015</h3>
+<p>It will be important to be up to speed on the most recent JavaScript
+specification, ES2015. We will briefly cover some of the major changes and
+things we will be using in this class in today&#39;s class.</p>
+<h3 id="create-react-app">create-react-app</h3>
+<p>We will be using <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a>
+to build the skeleton of our app and will follow many of the conventions that
+are laid out in that skeleton (file structure, file naming, etc).</p>
+<h3 id="yarn">Yarn</h3>
+<p><a href="https://yarnpkg.com/">Yarn</a> is a package manager for JavaScript. It acts as a
+wrapper around NPM and you can install any package that is available via NPM
+using Yarn. Yarn provides some extra features such as package caching and the
+usage of a lockfile.</p>
+<h3 id="graphql">GraphQL</h3>
+<p>The app that we will be building in class will have a data driven UI, so we
+will need to be able to fetch data from and persist data to a remote server.
+Instead of using a traditional REST API, we will be using <a href="http://graphql.org/">GraphQL</a>
+to accomplish this.</p>
+<h3 id="apollo-client">Apollo Client</h3>
+<p>To make is easier to use GraphQL in our application, we will be using the
+<a href="http://dev.apollodata.com/">Apollo Client</a>.</p>
+<h3 id="ramda-js">Ramda JS</h3>
+<p><a href="http://ramdajs.com/">Ramda JS</a> is a functional programming library for
+JavaScript. It is a lot like lo-dash or underscore on steriods. We will be using
+this library here and there to make our lives easier.</p>
+<h3 id="jest">Jest</h3>
+<p><a href="https://facebook.github.io/jest/">Jest</a> is a test running framework that allows us to
+easily run our tests and get output from the command line.</p>
+<h3 id="enzyme-js">Enzyme JS</h3>
+<p><a href="http://airbnb.io/enzyme/">Enzyme JS</a> is a testing framework built to make
+testing React components easier. It was built and is maintained by the team at
+<a href="http://airbnb.io">Airbnb</a>.</p>
+<h2 id="tools">Tools</h2>
+<h3 id="text-editor">Text Editor</h3>
+<p>Any text editor will do:</p>
+<ul>
+<li>I prefer Vim these days</li>
+<li><a href="http://www.sublimetext.com/">Sublime Text</a></li>
+<li><a href="https://atom.io">Atom</a></li>
+</ul>
+<h3 id="version-control-git-">Version Control (Git)</h3>
+<ul>
+<li>We will be using Git + GitHub exclusively for version control in this course</li>
+<li>You don&#39;t have to be a git expert right off the bat</li>
+<li>Learn commands as you go, eventually you will &quot;commit&quot; them to memory (pun intended)</li>
+<li>Resources:<ul>
+<li><a href="http://git-scm.com/book">Pro Git</a> (free online book)</li>
+<li><a href="http://try.github.io/">Code School + GitHub&#39;s Try Git</a> (interactive tutorial)</li>
+</ul>
+</li>
+<li>Have we all heard of <a href="https://github.com">GitHub</a>?</li>
+</ul>
+<h2 id="development-environment">Development Environment</h2>
+<h3 id="node">Node</h3>
+<p>We will be using Node 6.11.4 in this class. For those of you that do not have
+node installed, let&#39;s get that done right now.</p>
+<h4 id="mac-osx-linux">Mac OSX/Linux</h4>
+<p>I highly recommend using <a href="https://github.com/creationix/nvm">NVM</a> to manage
+and install your Node versions. Using homebrew you&#39;ll get an older version, which is
+not what we want.</p>
+<p>There are two ways to install NVM:</p>
+<pre><code class="lang-bash">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+</code></pre>
+<p>or</p>
+<pre><code class="lang-bash">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+</code></pre>
+<p>The script clones the nvm repository to <code>~/.nvm</code> and adds the source line
+to your profile (<code>~/.bash_profile</code>, <code>~/.zshrc</code> or <code>~/.profile</code>).</p>
+<p>Once you have successfully installed NVM, all you need to do now is install
+node:</p>
+<pre><code class="lang-bash">nvm install 6.11.4
+</code></pre>
+<h4 id="windows">Windows</h4>
+<p>You&#39;re on your own. Just kidding.</p>
+<p>Go to the <a href="https://nodejs.org/en/">NodeJS</a> website and download the installer.
+Then use the installer to install Node.</p>
+<h2 id="getting-familiar-with-es2015">Getting Familiar with ES2015</h2>
+<p>Open up your terminal, make sure you&#39;re using the correct version of Node, and
+fire up the REPL:</p>
+<pre><code class="lang-bash">$ nvm use 6.11.4
+Now using node v6.11.4 (npm v3.10.10)
+$ node -v
+$ node
+&gt;
+</code></pre>
+<h3 id="string-interpolation">String Interpolation</h3>
+<p>ES2015 now supports string interpolation, meaning we no longer need to do this:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> s = <span class="string">'Foo'</span> + bar + <span class="string">'Baz'</span>;
+</code></pre>
+<p>Interpolation works by surrounding your string with backticks instead of
+quotes.</p>
+<pre><code class="lang-js"><span class="keyword">var</span> s = <span class="string">`Foo <span class="subst">${bar}</span> Baz`</span>;
+</code></pre>
+<p>As you can see, we use the <code>${}</code> notation to interpolate. Anything inside
+the brackets will be interpreted, so you can not only put variables inside,
+but you can perform operations:</p>
+<pre><code class="lang-js"><span class="built_in">console</span>.log(<span class="string">`Four plus five equals <span class="subst">${<span class="number">4</span> + <span class="number">5</span>}</span>`</span>);
+</code></pre>
+<h3 id="arrow-functions">Arrow Functions</h3>
+<p>Arrow functions are a shorthand for defining a function, plus as a bonus,
+it automatically binds <code>this</code> to the function. So there&#39;s no more of this:</p>
+<pre><code class="lang-js"><span class="keyword">this</span>.number = <span class="number">2</span>;
+<span class="keyword">var</span> self = <span class="keyword">this</span>;
+
+<span class="keyword">var</span> addNumbers = <span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>{
+  <span class="keyword">return</span> self.number + number;
+}
+</code></pre>
+<p>That now simply becomes:</p>
+<pre><code class="lang-js"><span class="keyword">this</span>.number = <span class="number">2</span>;
+
+<span class="keyword">var</span> addNumbers = <span class="function">(<span class="params">number</span>) =&gt;</span> {
+  <span class="keyword">return</span> <span class="keyword">this</span>.number + number;
+}
+</code></pre>
+<p>Pretty neat huh?</p>
+<p>If the function is just one line, you can write it like this:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> addNumbers = <span class="function">(<span class="params">x</span>) =&gt;</span> (
+  x + <span class="number">2</span>
+);
+</code></pre>
+<p>Notice how we replaced the curly braces with parens? That means two things:</p>
+<ol>
+<li>That the function can only have <em>one</em> line of code.</li>
+<li>That the function is going to implicitly return the result of that one line.</li>
+</ol>
+<p>So there&#39;s no need for a return. Awesome!</p>
+<p>Also, if it&#39;s just a one liner like above, you can write that function like this:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> addNumbers = <span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">2</span>;
+addNumbers(<span class="number">2</span>);
+=&gt; <span class="number">4</span>
+</code></pre>
+<p>We&#39;re going to see the first type of function used quite a bit in this class
+in the form of <code>Functional Components</code> which will look something like this:</p>
+<pre><code class="lang-js"><span class="keyword">const</span> WelcomMessage = <span class="function">(<span class="params">{ name, message, sender }</span>) =&gt;</span> (
+  <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">'name'</span>&gt;</span>Hello {name}<span class="tag">&lt;/<span class="name">span</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">'message'</span>&gt;</span>{sender} wanted to tell you that {message}<span class="tag">&lt;/<span class="name">span</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>
+);
+</code></pre>
+<p>That may look a bit weird right now, but by the end of this class you&#39;ll be
+whipping out these stateless components like it&#39;s second nature.</p>
+<h3 id="destructuring">Destructuring</h3>
+<p>One of the weird things you may have noticed from the code sample above
+is the function declaration:</p>
+<pre><code class="lang-js"><span class="keyword">export</span> <span class="keyword">default</span> ({ name, message, sender }) =&gt; (
+</code></pre>
+<p>What we&#39;re doing there is called parameter destructuring. This function
+expects an object to be passed in as a parameter that looks like:</p>
+<pre><code class="lang-js">{
+  <span class="attr">name</span>: <span class="string">'Darin'</span>,
+  <span class="attr">message</span>: <span class="string">'You learned React'</span>,
+  <span class="attr">sender</span>: <span class="string">'Jason'</span>
+}
+</code></pre>
+<p>It will then assign the variables <code>name</code>, <code>message</code>, and <code>sender</code> to the
+value of the keys in that object. If the keys don&#39;t exist, the variables
+will be <code>undefined</code>.</p>
+<p>Let&#39;s try it out in the REPL:</p>
+<pre><code class="lang-js"><span class="keyword">let</span> foo = { <span class="attr">a</span>: <span class="string">"1"</span>, <span class="attr">b</span>: <span class="string">"2"</span> };
+<span class="keyword">let</span> { a, b } = foo;
+<span class="built_in">console</span>.log(a, b);
+</code></pre>
+<h3 id="default-parameters">Default Parameters</h3>
+<p>Another great feature of ES2015 is that you can define default parameters in
+your function declarations. Take this code for example:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> addNumbers = <span class="function"><span class="keyword">function</span>(<span class="params">number, otherNumber</span>) </span>{
+  <span class="keyword">if</span> (otherNumber === <span class="literal">undefined</span>) {
+    otherNumber = <span class="number">2</span>;
+  }
+  <span class="keyword">return</span> number + otherNumber;
+}
+</code></pre>
+<p>Using default parameters, we can now rewrite that like this:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> addNumbers = <span class="function"><span class="keyword">function</span>(<span class="params">number, otherNumber = <span class="number">2</span></span>) </span>{
+  <span class="keyword">return</span> number + otherNumber;
+}
+</code></pre>
+<h3 id="spread-operators">Spread Operators</h3>
+<p>Spread operators are another thing that come in extremely handy when
+creating React components. I&#39;ll go over these briefly right now just so
+we have a basic understanding.</p>
+<p>Imagine we have an object:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> car = {
+  <span class="attr">make</span>: <span class="string">'Toyota'</span>,
+  <span class="attr">model</span>: <span class="string">'Corolla'</span>
+}
+</code></pre>
+<p>If we were to put this into a React component:</p>
+<pre><code class="lang-js">&lt;Car {...car} /&gt;
+</code></pre>
+<p>This would be the equivalent of saying:</p>
+<pre><code class="lang-js">&lt;Car make={car.make} model={car.model} /&gt;
+</code></pre>
+<p>It&#39;s just some nice, convenient shorthand that comes in quite handy in a lot
+of cases. Especially in re-usable components.</p>
+<h3 id="for-of">For..Of</h3>
+<p>This is another nice feature, that has actually made it&#39;s way into most
+browsers already. It allows you to easily loop through an array:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]
+<span class="keyword">for</span> (<span class="keyword">var</span> n <span class="keyword">of</span> a) {
+  <span class="built_in">console</span>.log(n);
+}
+</code></pre>
+<p>Just a bit of really nice shorthand that makes looping easier.</p>
+<h3 id="foreach-and-map">forEach and map</h3>
+<p>These are also a few that are already in browsers but don&#39;t get a lot of
+attention.</p>
+<pre><code class="lang-js"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+a.forEach(<span class="function">(<span class="params">num, index</span>) =&gt;</span> <span class="built_in">console</span>.log(num, index));
+</code></pre>
+<pre><code class="lang-js"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];
+a.map(<span class="function">(<span class="params">num</span>) =&gt;</span> num + <span class="number">1</span>);
+<span class="built_in">console</span>.log(a);
+</code></pre>
+<h3 id="classes">Classes</h3>
+<p>New in ES2015 is the ability to create your own classes. Classes support
+inheritance, super calls, instance and static methods, and constructors.</p>
+<p>Let&#39;s create a class that we can work with:</p>
+<pre><code class="lang-js"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>{
+  <span class="keyword">constructor</span>(make, model, year) {
+    <span class="keyword">this</span>.make = make;
+    <span class="keyword">this</span>.model = model;
+    <span class="keyword">this</span>.year = year;
+  }
+
+  name() {
+    <span class="keyword">return</span> <span class="string">`<span class="subst">${<span class="keyword">this</span>.year}</span> <span class="subst">${<span class="keyword">this</span>.make}</span> <span class="subst">${<span class="keyword">this</span>.model}</span>`</span>;
+  }
+}
+
+<span class="keyword">let</span> myCar = <span class="keyword">new</span> Car(<span class="string">"Toyota"</span>, <span class="string">"Highlander"</span>, <span class="string">"2003"</span>);
+<span class="built_in">console</span>.log(myCar.name());
+</code></pre>
+<p>You can also inherit from other classes. Let&#39;s make a new class called
+<code>Vehicle</code> that will hold common information:</p>
+<pre><code class="lang-js"><span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>{
+  <span class="keyword">constructor</span>(make, model, year) {
+    <span class="keyword">this</span>.make = make;
+    <span class="keyword">this</span>.model = model;
+    <span class="keyword">this</span>.year = year;
+  }
+
+  get name() {
+    <span class="keyword">return</span> <span class="string">`<span class="subst">${<span class="keyword">this</span>.year}</span> <span class="subst">${<span class="keyword">this</span>.make}</span> <span class="subst">${<span class="keyword">this</span>.model}</span>`</span>;
+  }
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>{
+  get type() {
+    <span class="keyword">return</span> <span class="string">'Car'</span>;
+  }
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">Truck</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>{
+  get type() {
+    <span class="keyword">return</span> <span class="string">'Truck'</span>;
+  }
+}
+
+<span class="keyword">let</span> myCar = <span class="keyword">new</span> Car(<span class="string">"Toyota"</span>, <span class="string">"Highlander"</span>, <span class="string">"2003"</span>);
+<span class="keyword">let</span> myTruck = <span class="keyword">new</span> Truck(<span class="string">"Toyota"</span>, <span class="string">"Tacoma"</span>, <span class="string">"2005"</span>);
+
+<span class="built_in">console</span>.log(myCar.name);
+<span class="built_in">console</span>.log(myCar.type);
+<span class="built_in">console</span>.log(myTruck.name);
+<span class="built_in">console</span>.log(myTruck.type);
+</code></pre>
+<h3 id="modules">Modules</h3>
+<p>In ES2015, we can easily import modules using, you guessed it, the <code>import</code> syntax.
+It looks something like this:</p>
+<pre><code class="lang-js"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>
+</code></pre>
+<p>So, the React module <code>exports</code> a <code>React</code> class, probably something like this:</p>
+<pre><code class="lang-js"><span class="keyword">export</span> <span class="keyword">default</span> React
+</code></pre>
+<p>When we say <code>export default</code> in a module, we are saying that if you do not
+specify which <code>export</code> to <code>import</code> (strange language, I know), then you&#39;ll
+get the default. If we were to export things in this fashion:</p>
+<pre><code class="lang-js"><span class="keyword">export</span> <span class="keyword">default</span> React
+
+<span class="keyword">export</span> Container
+</code></pre>
+<p>Then we could import like this:</p>
+<pre><code class="lang-js"><span class="keyword">import</span> React, { Container } <span class="keyword">from</span> <span class="string">'react'</span>
+</code></pre>
+<p>Yup, you can use destructuring during an import too. Awesome!</p>
+<h2 id="getting-started-with-react">Getting Started With React</h2>
+<h3 id="dependencies-and-a-development-server">Dependencies and a development server</h3>
+<p>We&#39;ve covered the basics so let&#39;s get started with some React! Let&#39;s just
+create a small sample application to get us started. Go to whatever directory
+you like to keep your code in and make a new directory called <code>todo</code>. Change
+into that directory and let&#39;s get started by installing some modules.</p>
+<pre><code class="lang-bash">$ yarn add global create-react-app
+$ create-react-app todo
+$ <span class="built_in">cd</span> todo
+$ yarn start
+</code></pre>
+<p>This will install all of the pre-requisites for a basic React app, including
+React, React DOM, Babel, Webpack, and Nodemon.</p>
+<p>Cool! We&#39;ve got a basic hello world app ready to go!</p>
+
+					</div>
+				</div>
+			</main>
+			<nav id="nav">
+				<div class="innertube">
+					<h3>Classes</h3>
+					<ul>
+						<li><a href="http://dphaener.github.io/geekwise-react/day-1">Day 1</a></li>
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-2">Day 2</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-3">Day 3</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-4">Day 4</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-5">Day 5</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-6">Day 6</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-7">Day 7</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-8">Day 8</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-9">Day 9</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-10">Day 10</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-11">Day 11</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-12">Day 12</a></li> -->
+					</ul>
+					<h3>Resources</h3>
+					<ul>
+            <li><a target="_blank" href="https://geekwise.slack.com/messages/G7RGZ117H/">Slack Channel</a></li>
+						<li><a target="_blank" href="https://facebook.github.io/react/">React</a></li>
+            <li><a target="_blank" href="https://reacttraining.com/react-router/">React Router</a></li>
+						<li><a target="_blank" href="https://babeljs.io/docs/learn-es2015/">ES6 Features</a></li>
+						<li><a target="_blank" href="https://babeljs.io">Babel</a></li>
+						<li><a target="_blank" href="https://nodejs.org/en/">NodeJS</a></li>
+						<li><a target="_blank" href="https://github.com/creationix/nvm">NVM</a></li>
+            <li><a target="_blank" href="https://webpack.github.io/">Webpack</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/flux/docs/overview.html">Flux</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/graphql/">GraphQL</a></li>
+            <li><a target="_blank" href="https://github.com/jaredpalmer/formik">Formik</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/jest/">Jest</a></li>
+            <li><a target="_blank" href="http://airbnb.io/enzyme/">Enzyme</a></li>
+            <li><a target="_blank" href="http://dev.apollodata.com/react/">Apollo Client - React</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://dphaener.github.io/geekwise-react/styles/app.css" rel="stylesheet" />
+    <title>Geekwise Academy | ReactJS</title>
+  </head>
+  <body>
+    <div id="wrapper">
+			<main>
+				<div id="content">
+					<div class="innertube">
+            <h1 id="day-4-finishing-user-registration">Day 4: Finishing user registration</h1>
+<h2 id="setting-up">Setting up</h2>
+<p>Everyone will need to clone my Day 4 branch from the geekbook repository.</p>
+<pre><code class="lang-bash">$ <span class="built_in">cd</span> geekbook
+$ git fetch origin
+$ git checkout -t origin/day-4
+</code></pre>
+<p>Then you&#39;ll need to npm install again:</p>
+<pre><code class="lang-bash">$ npm install
+</code></pre>
+<p>If all goes well, you should be able to start the server and see the fancy
+new styles:</p>
+<pre><code class="lang-bash">$ npm start
+</code></pre>
+<h2 id="testing-review">Testing review</h2>
+<p>Last week we ran into a few problems while testing the login component. The
+issue lied in that when we were simulating a click on the <code>submit</code> button
+the React testing utils were not allowing the form to be submitted. I personally
+think this is probably good behavior, as it allows us to really isolate our
+test cases in a black box.</p>
+<p>Let&#39;s open up the test file and discuss the changes I made to make this work
+properly.</p>
+<h2 id="the-registration-form">The registration form</h2>
+<p>We&#39;ve taken the login form about as far as we can at this point. There isn&#39;t a
+good reason to implement any further functionality at this point, since there
+isn&#39;t a user in the system to login with. So let&#39;s create the registration
+functionality.</p>
+<h3 id="form-validation">Form Validation</h3>
+<p>We&#39;re going to need to validate this form, as all fields are required, and
+one is required to be a confirmation field. This is going to add a bit of
+complexity to our form. We&#39;re going to need to break this into pieces and do
+some testing so that we can get our functionality dialed in.</p>
+<p><em>Discuss:</em></p>
+<ul>
+<li>What duplication do we have so far?</li>
+<li>How can we reduce this duplication?</li>
+</ul>
+<p><em>Exercise:</em> Refactor the registration component to remove duplication.</p>
+<p>Now we have some basic input components, but they need to be able to display
+validation errors, and of course, perform validations. Let&#39;s implement that.</p>
+<p><em>Discuss:</em> What should validation errors look like, and how do we validate the components?</p>
+<p><em>Exercise:</em> Create the validations, and write tests for the input components</p>
+<p>So now that we have some basic form components, let&#39;s implement some validation.
+I think we should create a form component for this, so let&#39;s do that and test
+it.</p>
+<p><em>Discuss:</em></p>
+<ul>
+<li>What does the form component need to do?</li>
+<li>What tests do we need to write?</li>
+</ul>
+<p><em>Exercise:</em> Implement the form component with tests (pair programming)</p>
+<h3 id="controlled-and-uncontrolled-components">Controlled and uncontrolled components</h3>
+<p>React has the notion of <code>controlled</code> and <code>uncontrolled</code> components. When creating
+input components it makes a big difference whether you use <code>value</code> or <code>defaultValue</code>
+as the component attribute. When you use the <code>value</code> attribute to set an initial
+value on a component, it becomes a <code>controlled</code> component. What this means is
+that the value cannot be changed via user input. The value can <em>ONLY</em> be updated
+programatically. An <code>uncontrolled</code> component however does not have these
+restraints. You can still set an initial value for an input by using the
+<code>defaultValue</code> attribute and the component will remain an <code>uncontrolled</code>
+component.</p>
+<h2 id="introducing-graphql">Introducing GraphQL</h2>
+<p>The backend server is a GraphQL server. We&#39;ll be writing our queries using the
+<a href="https://facebook.github.io/graphql/">GraphQL</a> query language. This is a very
+powerful query language that will allow us, the consumer of an API, to be
+able to request exactly the data we need from the API, and only the data we
+need. All from a single API endpoint.</p>
+<p>A simple GraphQL query that we might use could look like this:</p>
+<pre><code class="lang-js">query {
+  user(id: <span class="number">1234</span>) {
+    email
+  }
+}
+</code></pre>
+<p>You&#39;ll notice that this looks a lot like a JavaScript object, but with only keys.
+This is how you structure a GraphQL query. You tell the server what record
+you are looking for, in this case a <code>User</code> with an id of <code>1234</code>. Then we tell
+the server that we&#39;re only looking for the email of that user.</p>
+<p>Let&#39;s jump into Postman and play with this a bit.</p>
+
+					</div>
+				</div>
+			</main>
+			<nav id="nav">
+				<div class="innertube">
+					<h3>Classes</h3>
+					<ul>
+						<li><a href="http://dphaener.github.io/geekwise-react/day-1">Day 1</a></li>
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-2">Day 2</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-3">Day 3</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-4">Day 4</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-5">Day 5</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-6">Day 6</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-7">Day 7</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-8">Day 8</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-9">Day 9</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-10">Day 10</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-11">Day 11</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-12">Day 12</a></li> -->
+					</ul>
+					<h3>Resources</h3>
+					<ul>
+            <li><a target="_blank" href="https://geekwise.slack.com/messages/G7RGZ117H/">Slack Channel</a></li>
+						<li><a target="_blank" href="https://facebook.github.io/react/">React</a></li>
+            <li><a target="_blank" href="https://reacttraining.com/react-router/">React Router</a></li>
+						<li><a target="_blank" href="https://babeljs.io/docs/learn-es2015/">ES6 Features</a></li>
+						<li><a target="_blank" href="https://babeljs.io">Babel</a></li>
+						<li><a target="_blank" href="https://nodejs.org/en/">NodeJS</a></li>
+						<li><a target="_blank" href="https://github.com/creationix/nvm">NVM</a></li>
+            <li><a target="_blank" href="https://webpack.github.io/">Webpack</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/flux/docs/overview.html">Flux</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/graphql/">GraphQL</a></li>
+            <li><a target="_blank" href="https://github.com/jaredpalmer/formik">Formik</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/jest/">Jest</a></li>
+            <li><a target="_blank" href="http://airbnb.io/enzyme/">Enzyme</a></li>
+            <li><a target="_blank" href="http://dev.apollodata.com/react/">Apollo Client - React</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+  </body>
+</html>

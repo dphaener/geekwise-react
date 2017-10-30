@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="http://dphaener.github.io/geekwise-react/styles/app.css" rel="stylesheet" />
+    <title>Geekwise Academy | ReactJS</title>
+  </head>
+  <body>
+    <div id="wrapper">
+			<main>
+				<div id="content">
+					<div class="innertube">
+            <h1 id="day-7-the-user-feed">Day 7: The User feed</h1>
+<h2 id="setting-up">Setting up</h2>
+<p>Everyone will need to clone by Day 7 branch today.</p>
+<pre><code class="lang-bash">$ git <span class="built_in">clone</span> git@github.com:dphaener/geekbook.git
+$ <span class="built_in">cd</span> geekbook
+$ git checkout day-7
+</code></pre>
+<h2 id="reviewing-the-changes">Reviewing the changes</h2>
+<p>I made a bunch of changes to the code base over the weekend so that we can
+continue on and start creating the user feed. Let&#39;s review those right now.</p>
+<h3 id="multiple-reducers">Multiple reducers</h3>
+<p>If you look at the reducers directory, you will see that I separated the reducers out into two
+files, and then combined them into one object that I exported.</p>
+<pre><code class="lang-js"><span class="keyword">import</span> registration <span class="keyword">from</span> <span class="string">'./registration'</span>
+<span class="keyword">import</span> login <span class="keyword">from</span> <span class="string">'./login'</span>
+
+<span class="keyword">export</span> <span class="keyword">default</span> {
+  registration,
+  login
+}
+</code></pre>
+<p>I then had to update the way we were combining reducers in <code>app.jsx</code>:</p>
+<pre><code class="lang-js"><span class="keyword">const</span> reducer = combineReducers(
+  <span class="built_in">Object</span>.assign({}, reducers, { <span class="attr">routing</span>: routeReducer})
+)
+</code></pre>
+<h3 id="protecting-the-user-feed-page">Protecting the user feed page</h3>
+<p>Up until now, if you knew a user&#39;s id, you could just put that in the URL,
+and the app would work. I added a simple authentication function to help us
+protect this page:</p>
+<pre><code class="lang-js"><span class="function"><span class="keyword">function</span> <span class="title">authenticate</span>(<span class="params">nextState, replace</span>) </span>{
+  <span class="keyword">if</span> (!localStorage.getItem(<span class="string">'geekbook_user'</span>)) {
+    replace({ <span class="attr">pathname</span>: <span class="string">'/'</span> })
+  }
+}
+</code></pre>
+<p>This function simply checks for the presence of our <code>geekbook_user</code> key and
+if it cannot be found it redirects to the home page. Admittidely, this could
+be more secure (like checking the URL token against the token in the <code>geekbook_user</code>
+key), but for the purposes of moving forward, we&#39;ll go with this.</p>
+<p>This function is invoked on the <code>onEnter</code> callback in the React Router route:</p>
+<pre><code class="lang-js">&lt;Route path=<span class="string">"/:token"</span> component={Feed} onEnter={authenticate} /&gt;
+</code></pre>
+<h3 id="first-api-data-call">First API data call</h3>
+<p>I also added a simple API call to load the users first ten posts. This isn&#39;t
+how we want to implement this in the end, we ultimately want to move this
+into an action creator. Here&#39;s the query:</p>
+<pre><code class="lang-js">query {
+  user(token: <span class="string">"${this.state.userId}"</span>) {
+    posts(first: <span class="number">10</span>) {
+      content
+    }
+  }
+}
+</code></pre>
+<h2 id="creating-the-user-feed">Creating the user feed</h2>
+<p>Next we&#39;ll be starting on the creation of the user&#39;s feed.</p>
+<p><em>Discuss:</em></p>
+<ul>
+<li>How do we protect this route and make sure the user is logged in?</li>
+</ul>
+<p><em>Exercise:</em> Protect the feed route</p>
+<p><em>Discuss:</em></p>
+<ul>
+<li>What models do we need?</li>
+<li>What fields should be on those models?</li>
+<li>What relationships should there be?</li>
+<li>What should the &#39;Post&#39; component look like?</li>
+</ul>
+<p><em>Exercise:</em> Begin creating the Post component</p>
+
+					</div>
+				</div>
+			</main>
+			<nav id="nav">
+				<div class="innertube">
+					<h3>Classes</h3>
+					<ul>
+						<li><a href="http://dphaener.github.io/geekwise-react/day-1">Day 1</a></li>
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-2">Day 2</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-3">Day 3</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-4">Day 4</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-5">Day 5</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-6">Day 6</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-7">Day 7</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-8">Day 8</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-9">Day 9</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-10">Day 10</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-11">Day 11</a></li> -->
+            <!-- <li><a href="http://dphaener.github.io/geekwise-react/day-12">Day 12</a></li> -->
+					</ul>
+					<h3>Resources</h3>
+					<ul>
+            <li><a target="_blank" href="https://geekwise.slack.com/messages/G7RGZ117H/">Slack Channel</a></li>
+						<li><a target="_blank" href="https://facebook.github.io/react/">React</a></li>
+            <li><a target="_blank" href="https://reacttraining.com/react-router/">React Router</a></li>
+						<li><a target="_blank" href="https://babeljs.io/docs/learn-es2015/">ES6 Features</a></li>
+						<li><a target="_blank" href="https://babeljs.io">Babel</a></li>
+						<li><a target="_blank" href="https://nodejs.org/en/">NodeJS</a></li>
+						<li><a target="_blank" href="https://github.com/creationix/nvm">NVM</a></li>
+            <li><a target="_blank" href="https://webpack.github.io/">Webpack</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/flux/docs/overview.html">Flux</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/graphql/">GraphQL</a></li>
+            <li><a target="_blank" href="https://github.com/jaredpalmer/formik">Formik</a></li>
+            <li><a target="_blank" href="https://facebook.github.io/jest/">Jest</a></li>
+            <li><a target="_blank" href="http://airbnb.io/enzyme/">Enzyme</a></li>
+            <li><a target="_blank" href="http://dev.apollodata.com/react/">Apollo Client - React</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+  </body>
+</html>
